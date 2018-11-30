@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>1.正向查詢,通過Book查詢Publisher</h3>
+	<p>書名:{{book.title}}</p>
+    <p>出版日期:{{book.publication_date}}</p>
+    <p>出版社:{{publisher.name}}</p>
+    <h3>2.反向查詢,通過Publisher查詢Book們</h3>
+    <p>出版社:{{pub.name}}</p>
+	{%for b in books%}
+		<p>書名:{{b.title}}</p>
+        <p>出版日期:{{b.publication_date}}</p>
+	{%endfor%}
+</body>
+</html>

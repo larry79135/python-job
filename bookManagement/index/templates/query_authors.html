@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>查询结果</h2>
+	{%for author in authors%}
+		<h3>ID:{{author.id}}</h3>
+        <h3>Name:{{author.name}}</h3>
+        <h3>Age:{{author.age}}</h3>
+        <h4>Email:{{author.email}}</h4>
+	{%endfor%}    
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+		{%block title%}
+        用户注册
+        {%endblock%}
+	</title>
+</head>
+<body>
+	<h1>這是網頁頭部</h1>
+	<!--定义允许被子模板覆盖的内容 -->
+	{%block content%}
+		<h1>這是parent中顯示的內容	</h1>
+	{%endblock%}
+	<h1>這是網頁底部</h1>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>顯示一個作者的信息:</h2>
+	<h3>{{auth.id}}</h3>
+    <h3>{{auth.name}}</h3>
+    <h3>{{auth.age}}</h3>
+    <h3>{{auth.email}}</h3>
+
+	 <h2>所有的作者信息如下:</h2>
+	 {%for author in authors%}
+	 	<p>ID:{{author.id}}</p>
+		<p>Name:{{author.name}}</p>
+		<p>Email:{{author.email}}</p>
+		<p>Age:{{author.age}}</p>
+	 {%endfor%}		
+</body>
+</html>

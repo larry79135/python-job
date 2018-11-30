@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    {%for auth in authors%}
+        <p>ID:{{auth.id}}</p>
+        <p>Name:{{auth.name}}</p>
+        <p>Age:{{auth.age}}</p>
+    {%endfor%}	
+</body>
+</html>

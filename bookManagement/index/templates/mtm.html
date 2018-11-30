@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>作者{{author.name}}的簽約出版社為:</h3>
+	{%for publisher in pubList%}
+        <p>出版社:{{publisher.name}}</p>
+        <p>地址:{{publisher.address}}</p>
+    {%endfor%}
+    <h3>出版社{{pub.name}}的簽約作者為:</h3>
+    {%for au in auList%}
+        <p>作者:{{au.name}}</p>
+        <p>郵箱:{{au.email}}</p>
+    {%endfor%}
+
+</body>
+</html>

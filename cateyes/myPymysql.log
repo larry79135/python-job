@@ -1,0 +1,6 @@
+2018-05-30 17:16:56,460 ERROR executeINSERT INTO testdb.maoyan(title,actor,time) VALUES (%s,%s,%s);
+2018-11-08 19:29:35,866 ERROR connectDataBase Error
+2018-11-08 19:29:35,867 ERROR connectDataBase Error
+2018-11-08 19:33:18,584 ERROR connectDataBase Error
+2018-11-08 19:33:53,377 ERROR connectDataBase Error
+2018-11-08 20:24:12,183 ERROR executeINSERT INTO testdb.maoyan(title,actor,time) VALUES (%s,%s,%s);
