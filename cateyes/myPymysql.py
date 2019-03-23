@@ -2,15 +2,15 @@ import pymysql
 import logging
 from collections import deque
 
-# 获取logger的实例
+
 logger = logging.getLogger("myPymysql")
-# 指定logger的输出格式
+
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-# 文件日志
+
 file_handler = logging.FileHandler("myPymysql.log")
 file_handler.setFormatter(formatter)
 
-# 设置默认的级别
+
 logger.setLevel(logging.INFO)
 logger.addHandler(file_handler)
 
@@ -32,12 +32,7 @@ class DBHelper:
     连接数据库
     """
     try:
-      # self.conn = pymysql.connect(host=self.host, 
-      #                             user=self.user,
-      #                             password=self.passwd,
-      #                             db=self.db,
-      #                             port=self.port,
-      #                             charset=self.charset)
+
       self.conn =pymysql.connect(host="127.0.0.1",
         user='root',password="a123456",db="testdb",charset="utf8")
 
@@ -49,9 +44,7 @@ class DBHelper:
     return True
 
   def createData(self):
-    """
-      创建数据库
-    """
+   
     #self.connectDataBase()
     sql = "create database if not exists "+self.db
     try:
@@ -62,9 +55,7 @@ class DBHelper:
     return True
 
   def execute(self, sql, params=None):
-    """
-    执行一般的sql语句
-    """
+    
     if self.connectDataBase() == False:
       return False
 
@@ -82,7 +73,7 @@ class DBHelper:
       if self.connectDataBase() == False:
         return -1
       self.execute(sql, params)
-      return self.cur.fetchone() # 返回操作数据库操作得到一条结果数据
+      return self.cur.fetchone() 
 
   def myClose(self):
       if self.cur:
@@ -106,23 +97,12 @@ if __name__ == '__main__':
           time  varchar(100));"
   result = dbhelper.execute(sql, None)
   if result == True:
-    print("创建表成功")
+    print("創建表成功")
   else:
-    print("创建表失败")
+    print("創建表失敗")
   dbhelper.myClose()
 
-  #id_data = "m3"
-  # title_data = "英雄本色3"
-  # actor_data = '周潤發'
-  # time_data = '2018-03-23'
-  # sql = "INSERT INTO testdb.maoyan(title,actor,time) VALUES (%s,%s,%s);"
-  # params = (title_data, actor_data, time_data)
-  # result = dbhelper.execute(sql, params)
-  # if result == True:
-  #   print("插入成功")
-  # else:
-  #   print("插入失败")
-
+ 
 
 
 logger.removeHandler(file_handler)
