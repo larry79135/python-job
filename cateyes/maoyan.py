@@ -6,7 +6,6 @@ Created on Sat Apr 14 14:45:49 2018
 """
 
 '''
-爬貓眼網站TOP100的電影數據：
     http://maoyan.com/board/4?offset=0
     http://maoyan.com/board/4?offset=10
     http://maoyan.com/board/4?offset=20
@@ -38,7 +37,7 @@ logger.addHandler(file_handler)
 
 def get_one_page(url):
     """
-    發起Http請求，獲取Response的響應結果
+    
     """
     ua_headers = {"User-Agent":"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50"}
     reponse = requests.get(url,headers=ua_headers)
@@ -48,7 +47,7 @@ def get_one_page(url):
 
 def write_to_file(item):
     """
-    把抓取到的數據寫入本地文件
+    
     """
     with open("貓眼電影4.txt", 'a', encoding='utf-8') as f:
         # json encode -> json str 
@@ -57,7 +56,7 @@ def write_to_file(item):
 
 def write_to_sql(item):
     """
-    把數據寫入數據庫
+    
     """
     dbhelper = myPymysql.DBHelper()
     title_data = item['title']
@@ -76,8 +75,7 @@ def write_to_sql(item):
 
 def parse_one_page(html):
     """
-    從獲取到的html頁面中提取真實想要存儲的數據：
-    電影名，主演，上映時間
+    
     """
     pattern = re.compile('<p class="name">.*?title="([\s\S]*?)"[\s\S]*?<p class="star">([\s\S]*?)</p>[\s\S]*?<p class="releasetime">([\s\S]*?)</p>')
     items = re.findall(pattern,html)
@@ -113,7 +111,6 @@ def analysisCounry():
 
 def CrawlMovieInfo(lock, offset):
     """
-    抓取電影的電影名，主演，上映時間
     """
     url = 'http://maoyan.com/board/4?offset='+str(offset)
     
