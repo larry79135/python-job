@@ -28,9 +28,7 @@ class DBHelper:
     self.cur = None
 
   def connectDataBase(self):
-    """
-    连接数据库
-    """
+  
     try:
 
       self.conn =pymysql.connect(host="127.0.0.1",
